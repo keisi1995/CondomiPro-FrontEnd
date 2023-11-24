@@ -36,7 +36,7 @@
                 }).catch(respt => {
                     const arrResponse = helpers.printError(respt)
                     this.errors = arrResponse.errors
-                    this.error = arrResponse.error
+                    this.error = arrResponse.messageError
                 })
             },
         },
@@ -107,7 +107,7 @@
                         </div>
                         
                         <Button label="Iniciar Sesión" class="w-full p-3 text-xl mb-1" @click="login"></Button>
-                        <small id="error-help" class="p-error" v-if="errors">{{ error }}</small>                        
+                        <small id="error-help" class="p-error" v-if="error">{{ error }}</small>                        
                     </div>
                 </div>
             </div>

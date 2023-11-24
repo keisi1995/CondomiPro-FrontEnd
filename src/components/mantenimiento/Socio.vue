@@ -45,7 +45,7 @@
                 this.objDistrito = await helpers.arrDistrito(this.fields)
             },
             fnListar() {
-                axios.get('socio/').then(respt => {
+                axios.get('socio').then(respt => {
                     if (respt.status == 200) {
                         this.socios = respt.data.data
                     }
@@ -56,7 +56,7 @@
             },
             fnGrabar() {
                 if (!this.fields.id_socio) {
-                    axios.post('socio/', this.fields, helpers.configHeader()).then(respt => {
+                    axios.post('socio', this.fields, helpers.configHeader()).then(respt => {
                         const response = respt.data
                         if (respt.status == 201) {
                             toast.add({ severity: 'success', summary: 'Mensaje exitoso', detail: response.message, life: 3000 })
@@ -70,7 +70,7 @@
                         helpers.printAlert('warn', arrResponse.messageError)
                     })
                 } else {
-                    axios.put('socio/' + this.fields.id_socio, this.fields, helpers.configHeader()).then(respt => {
+                    axios.put('socio' + this.fields.id_socio, this.fields, helpers.configHeader()).then(respt => {
                         const response = respt.data
                         if (respt.status == 200) {
                             toast.add({ severity: 'success', summary: 'Mensaje exitoso', detail: response.message, life: 3000 })
@@ -87,7 +87,7 @@
             },
             eliminar () {
                 const id_socio = this.fields.id_socio
-                axios.delete('socio/' + id_socio, helpers.configHeader()).then(respt => {
+                axios.delete('socio' + id_socio, helpers.configHeader()).then(respt => {
                     const response = respt.data
                     if (respt.status == 200) {
                         toast.add({ severity: 'success', summary: 'Mensaje exitoso', detail: response.message, life: 3000 })

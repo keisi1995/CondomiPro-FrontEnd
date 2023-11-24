@@ -27,11 +27,11 @@
 const urlApi = import.meta.env.VITE_APP_URL_API
 
 export function printError(respt) {    
-    let arrResponse = {errors: null, messageError: null}
+    let arrResponse = {errors: {}, messageError: null}
     
     if (respt.response) {
         const response = respt.response
-        if (response.status == 422) { arrResponse.errors = response.data.errors } //Valida que los campos sean obligatorio
+        if (response.status == 422 && Object.keys(response.data.errors).length > 0 ) { arrResponse.errors = response.data.errors } //Valida que los campos sean obligatorio
         arrResponse.messageError = response.data.message
     } else {
         console.error(respt)

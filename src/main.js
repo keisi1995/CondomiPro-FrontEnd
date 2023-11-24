@@ -214,7 +214,7 @@ app.component('VirtualScroller', VirtualScroller);
 
 axios.interceptors.request.use((config) => {
     // Puedes realizar tareas como modificar el encabezado, adjuntar tokens, etc.
-    // console.log('Middleware - Antes de enviar la solicitud:', config);
+    console.log('Middleware - Antes de enviar la solicitud:', config);
     
     if (config.url != 'autenticar' && config.url != 'refresh') {
         if (!helpers.isTokenActive()) {
