@@ -70,7 +70,7 @@
                         helpers.printAlert('warn', arrResponse.messageError)
                     })
                 } else {
-                    axios.put('socio' + this.fields.id_socio, this.fields, helpers.configHeader()).then(respt => {
+                    axios.put('socio/' + this.fields.id_socio, this.fields, helpers.configHeader()).then(respt => {
                         const response = respt.data
                         if (respt.status == 200) {
                             toast.add({ severity: 'success', summary: 'Mensaje exitoso', detail: response.message, life: 3000 })
@@ -87,7 +87,7 @@
             },
             eliminar () {
                 const id_socio = this.fields.id_socio
-                axios.delete('socio' + id_socio, helpers.configHeader()).then(respt => {
+                axios.delete('socio/' + id_socio, helpers.configHeader()).then(respt => {
                     const response = respt.data
                     if (respt.status == 200) {
                         toast.add({ severity: 'success', summary: 'Mensaje exitoso', detail: response.message, life: 3000 })
