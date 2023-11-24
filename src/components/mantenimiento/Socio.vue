@@ -504,26 +504,26 @@
  
 <style scoped lang="scss">
     /* Estilos para pantallas más pequeñas */
-    @media (max-width: 600px) {
+    /*@media (max-width: 600px) {
     .p-dialog {
         width: 90%;
         max-width: none;
     }
-    }
+    }*/
 
     /* Estilos para pantallas medianas */
-    @media (min-width: 601px) and (max-width: 1200px) {
+    /*@media (min-width: 601px) and (max-width: 1200px) {
     .p-dialog {
         width: 70%;
         max-width: none;
     }
-    }
+    }*/
 
     /* Estilos para pantallas más grandes */
-    @media (min-width: 1201px) {
+    /*@media (min-width: 1201px) {
     .p-dialog {
         width: 60%;
         max-width: 800px;
     }
-    }
+    }*/
 </style>
